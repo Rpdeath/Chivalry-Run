@@ -5,7 +5,8 @@ using UnityEngine;
 public class moveHero : MonoBehaviour
 {
 	private Vector2 movement; 
-	public Vector2 speed;
+	public Vector2 speedModifier;
+	private Vector2 speed;
 	private Vector3 pos;
 	public float jumpVelocity = 5f;
 	public float jumpCountDown = 5f;
@@ -22,6 +23,7 @@ public class moveHero : MonoBehaviour
        Time.timeScale = 1;
 	   jumpCountDownTimer = jumpCountDown;
 	   maxJumpTimer = maxJump;
+	   speed = speedModifier;
     }
 
     // Update is called once per frame
@@ -38,16 +40,24 @@ public class moveHero : MonoBehaviour
 			
 			}
 			
+			if ( GetComponent<Rigidbody2D>().velocity.y != 0 ) {
+				speed.x = speedModifier.x/2;
+			}else{
+				speed.x = speedModifier.x;
+			}
+			
 			if ( jumpCountDownTimer < 0 ){
 					jumpCountDownTimer = jumpCountDown;
 					
 					isFalling = false;
+					
 			}
 			
 			if ( GetComponent<Rigidbody2D> ().velocity.y < 0 || maxJumpTimer < 0 ){
 					maxJumpTimer = maxJump;
 					isFalling = true;
 					isJumping = false;
+					
 				}
 				
 			
@@ -58,6 +68,7 @@ public class moveHero : MonoBehaviour
 			if (inputY > 0 && isFalling == false ){
 					jump = jumpVelocity;
 					isJumping = true;
+					
 			}
 			
 			movement = new Vector2(inputX*speed.x,jump);
