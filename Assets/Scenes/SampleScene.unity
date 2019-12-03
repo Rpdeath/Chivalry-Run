@@ -469,6 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 779926166}
   - component: {fileID: 779926167}
+  - component: {fileID: 779926169}
   - component: {fileID: 779926168}
   m_Layer: 0
   m_Name: Grass
@@ -566,6 +567,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 89.826584, y: 5.512716}
   m_EdgeRadius: 0
+--- !u!114 &779926169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779926165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7a9a32c83a59a4b8be06eccf74810a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
 --- !u!1 &816274050
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,6 +635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 931704473}
   - component: {fileID: 931704474}
+  - component: {fileID: 931704475}
   m_Layer: 0
   m_Name: FrontMountain
   m_TagString: Untagged
@@ -691,6 +706,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &931704475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931704472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7a9a32c83a59a4b8be06eccf74810a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
 --- !u!1 &1097718472
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,6 +729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1097718473}
   - component: {fileID: 1097718474}
+  - component: {fileID: 1097718475}
   m_Layer: 0
   m_Name: BackMountain
   m_TagString: Untagged
@@ -771,6 +800,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1097718475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097718472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7a9a32c83a59a4b8be06eccf74810a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
 --- !u!1 &1323678187
 GameObject:
   m_ObjectHideFlags: 0
