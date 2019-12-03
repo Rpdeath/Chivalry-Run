@@ -15,19 +15,6 @@ public class AnimController : MonoBehaviour {
 	void Update () {
 
 
-		int speedAnim = 0;
-
-		if ( Input.GetAxis("Horizontal") > 0 ){
-			GetComponent<SpriteRenderer>().flipX=false;
-			speedAnim = 1;
-		}
-		if ( Input.GetAxis("Horizontal") < 0 ){
-			GetComponent<SpriteRenderer>().flipX=true;
-			speedAnim = 1;
-		}
-
 		
-
-		animator.SetFloat("speed",speedAnim);
 	}
 }

@@ -22,13 +22,10 @@ public class generatorDragon : MonoBehaviour {
 		size.x = grass.GetComponent<BoxCollider2D>().bounds.size.x;
 		size.y = grass.GetComponent<BoxCollider2D>().bounds.size.y;
 
-		Texture2D texture = new Texture2D(0,0);
-		texture.LoadImage(Resources.Load("dragon.png"));
+		
 
-		float y = (grass.transform.position.y + (size.x/2));
-
-		if(GameObject.FindGameObjectsWithTag("Dragon").Length < 2 && Random.Range(0,100) == 50 ) {
-			Instantiate(Resources.Load("Ennemy_Dragon"), new Vector3(coinHautDroit.x+Random.Range(0,10), y , 0), Quaternion.identity);
+		if(GameObject.FindGameObjectsWithTag("Dragon").Length < 2 && Random.Range(0,1000) == 500 ) {
+			Instantiate(Resources.Load("Ennemy_Dragon"), new Vector3(coinHautDroit.x+Random.Range(0,10), coinHautDroit.y/4 , 0), Quaternion.identity);
 		}
 	}
 }
