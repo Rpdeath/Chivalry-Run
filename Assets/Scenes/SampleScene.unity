@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nbSpawn: 2
-  random: 500
+  random: 100
 --- !u!1 &876674878
 GameObject:
   m_ObjectHideFlags: 0
