@@ -8,7 +8,7 @@ public class generatorDragon : MonoBehaviour {
 	private Vector3 coinBasDroit;
 	public int nbSpawn;
 	private Vector2 size;
-	public GameObject grass;
+	public int random=500;
 
 	// Use this for initialization
 
@@ -19,12 +19,8 @@ public class generatorDragon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		size.x = grass.GetComponent<BoxCollider2D>().bounds.size.x;
-		size.y = grass.GetComponent<BoxCollider2D>().bounds.size.y;
 
-		
-
-		if(GameObject.FindGameObjectsWithTag("Dragon").Length < 2 && Random.Range(0,1000) == 500 ) {
+		if(GameObject.FindGameObjectsWithTag("Dragon").Length < 2 && Random.Range(0,random) == random/2 ) {
 			Instantiate(Resources.Load("Ennemy_Dragon"), new Vector3(coinHautDroit.x+Random.Range(0,10), coinHautDroit.y/4 , 0), Quaternion.identity);
 		}
 	}

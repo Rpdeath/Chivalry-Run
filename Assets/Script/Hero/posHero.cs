@@ -53,9 +53,9 @@ public class posHero : MonoBehaviour
 		}
 
 		// Blocage a gauche
-		if (transform.position.x < coinBasGauche.x + (size.x /2)){
+		if (transform.position.x < coinBasGauche.x - (size.x /2)){
 			gameObject.transform.position = new Vector3(
-											coinBasGauche.x + (size.x /2),
+											0,
 											transform.position.y,
 											transform.position.z);
 		}
