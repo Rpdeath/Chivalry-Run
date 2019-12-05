@@ -15,8 +15,10 @@ public class moveHero : MonoBehaviour
 	private  bool isFalling = false;
 	public float maxJump = 3f;
 	private float maxJumpTimer;
-	
-	
+    public int massOnFalling=25;
+    public int massOnJumping=10;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +45,12 @@ public class moveHero : MonoBehaviour
 				 GetComponent<Rigidbody2D>().gravityScale = 10;
 			
 			}
+
+            if (GetComponent<Rigidbody2D>().velocity.y == 0 )
+            {
+            GetComponent<Rigidbody2D>().gravityScale = 1;
+            GetComponent<Rigidbody2D>().mass = 10;
+        }
 			
 			if ( GetComponent<Rigidbody2D>().velocity.y != 0 ) {
 				speed.x = speedModifier.x/2;
