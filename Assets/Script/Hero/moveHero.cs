@@ -32,11 +32,15 @@ public class moveHero : MonoBehaviour
 			
 			if ( isFalling ) {
 				jumpCountDownTimer -= Time.deltaTime;
+				 GetComponent<Rigidbody2D>().mass=5000;
+				 GetComponent<Rigidbody2D>().gravityScale = 25;
 			
 			}
 			
 			if ( isJumping ) {
 				maxJumpTimer -= Time.deltaTime;
+				 GetComponent<Rigidbody2D>().mass = 500;
+				 GetComponent<Rigidbody2D>().gravityScale = 10;
 			
 			}
 			
