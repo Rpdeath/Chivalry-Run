@@ -1103,8 +1103,6 @@ GameObject:
   - component: {fileID: 2066732354}
   - component: {fileID: 2066732357}
   - component: {fileID: 2066732351}
-  - component: {fileID: 2066732356}
-  - component: {fileID: 2066732355}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -1121,7 +1119,7 @@ Transform:
   m_GameObject: {fileID: 2066732349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.89, y: -2.15, z: -1}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 245144821}
   m_RootOrder: 0
@@ -1240,37 +1238,6 @@ MonoBehaviour:
   maxJump: 0.4
   massOnFalling: 30
   massOnJumping: 10
---- !u!95 &2066732355
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066732349}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1448893c1e50e5a47b1bc3ee864015f4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2066732356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066732349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0a6e202bfc114fc8b9ce098d67a3db1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2066732357
 MonoBehaviour:
   m_ObjectHideFlags: 0
