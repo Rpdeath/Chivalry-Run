@@ -13,10 +13,12 @@ public class moveHero : MonoBehaviour
 	private float jumpCountDownTimer;
 	private  bool isJumping = false;
 	private  bool isFalling = false;
-	public float maxJump = 3f;
+    private bool isAttacking = false;
+    public float maxJump = 3f;
 	private float maxJumpTimer;
     public int massOnFalling=25;
-    public int massOnJumping=10;
+    public int massOnJumping = 10;
+    private Animator animator;
 
 
     // Start is called before the first frame update
@@ -26,6 +28,7 @@ public class moveHero : MonoBehaviour
 	   jumpCountDownTimer = jumpCountDown;
 	   maxJumpTimer = maxJump;
 	   speed = speedModifier;
+       animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -71,7 +74,8 @@ public class moveHero : MonoBehaviour
 					isJumping = false;
 					
 				}
-				
+        animator.setJumping(isFalling || isJumping);
+        animator.setAttacking(isAttacking);
 			
 			float inputY = Input.GetAxis("Vertical");
 			float inputX = Input.GetAxis("Horizontal");
