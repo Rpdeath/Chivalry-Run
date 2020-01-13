@@ -74,8 +74,8 @@ public class moveHero : MonoBehaviour
 					isJumping = false;
 					
 				}
-        animator.setJumping(isFalling || isJumping);
-        animator.setAttacking(isAttacking);
+        // animator.setJumping(isFalling || isJumping);
+        // animator.setAttacking(isAttacking);
 			
 			float inputY = Input.GetAxis("Vertical");
 			float inputX = Input.GetAxis("Horizontal");
