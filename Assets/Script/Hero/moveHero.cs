@@ -18,6 +18,8 @@ public class moveHero : MonoBehaviour
 	private float maxJumpTimer;
     public int massOnFalling=25;
     public int massOnJumping = 10;
+	public int gravityOnFalling=10;
+    public int gravityOnJumping = 10;
     private Animator animator;
 
 
@@ -37,21 +39,21 @@ public class moveHero : MonoBehaviour
 			
 			if ( isFalling ) {
 				jumpCountDownTimer -= Time.deltaTime;
-				 GetComponent<Rigidbody2D>().mass=5000;
-				 GetComponent<Rigidbody2D>().gravityScale = 25;
+				 GetComponent<Rigidbody2D>().mass=massOnFalling;
+				 GetComponent<Rigidbody2D>().gravityScale = gravityOnFalling;
 			
 			}
 			
 			if ( isJumping ) {
 				maxJumpTimer -= Time.deltaTime;
-				 GetComponent<Rigidbody2D>().mass = 500;
-				 GetComponent<Rigidbody2D>().gravityScale = 10;
+				 GetComponent<Rigidbody2D>().mass = massOnJumping;
+				 GetComponent<Rigidbody2D>().gravityScale = gravityOnJumping;
 			
 			}
 
             if (GetComponent<Rigidbody2D>().velocity.y == 0 )
             {
-            GetComponent<Rigidbody2D>().gravityScale = 1;
+            GetComponent<Rigidbody2D>().gravityScale = 10;
             GetComponent<Rigidbody2D>().mass = 10;
         }
 			
