@@ -38,7 +38,7 @@ public class menuMovement : MonoBehaviour
 											coinBasDroit.x/2 - (size.x),
 											transform.position.y ,
 											transform.position.z);
-            speed.x = 0;
+            speed.x = 0;	
 		}
 		movement = new Vector2(speed.x,0);
 		GetComponent<Rigidbody2D> ().velocity = movement;

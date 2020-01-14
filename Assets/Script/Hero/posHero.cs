@@ -20,6 +20,10 @@ public class posHero : MonoBehaviour
 		coinHautDroit = Camera.main.ViewportToWorldPoint (new Vector3 (1, 1, 0));
 		size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
 		size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
+		gameObject.transform.position = new Vector3(
+											coinBasDroit.x/2 - (size.x),
+											transform.position.y ,
+											transform.position.z);
 		}
 	
 	// Update is called once per frame
