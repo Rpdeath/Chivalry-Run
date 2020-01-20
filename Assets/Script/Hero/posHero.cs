@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class posHero : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class posHero : MonoBehaviour
 	private Vector3 coinHautGauche;
 	private Vector3 coinHautDroit;
 	private Vector3 size;
+	public int life = 5;
 
 	void Start()
 	{
@@ -58,11 +60,57 @@ public class posHero : MonoBehaviour
 
 		// Blocage a gauche
 		if (transform.position.x < coinBasGauche.x - (size.x /2)){
+			this.life--;
 			gameObject.transform.position = new Vector3(
 											0,
 											transform.position.y,
 											transform.position.z);
 		}
+
+		if (life==0){
+			GameObject.FindGameObjectsWithTag("life1")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,0);
+			GameObject.FindGameObjectsWithTag("life2")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,0);
+			GameObject.FindGameObjectsWithTag("life3")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,0);
+			GameObject.FindGameObjectsWithTag("life4")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,0);
+			GameObject.FindGameObjectsWithTag("life5")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,0);
+			SceneManager.LoadScene("EndGame");
+		}
+		if (life>=1){
+			GameObject.FindGameObjectsWithTag("life1")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,255);
+			GameObject.FindGameObjectsWithTag("life2")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,0);
+			GameObject.FindGameObjectsWithTag("life3")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,0);
+			GameObject.FindGameObjectsWithTag("life4")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,0);
+			GameObject.FindGameObjectsWithTag("life5")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,0);
+		}
+		if (life>=2){
+			GameObject.FindGameObjectsWithTag("life1")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,255);
+			GameObject.FindGameObjectsWithTag("life2")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,255);
+			GameObject.FindGameObjectsWithTag("life3")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,0);
+			GameObject.FindGameObjectsWithTag("life4")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,0);
+			GameObject.FindGameObjectsWithTag("life5")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,0);
+		}
+		if (life>=3){
+			GameObject.FindGameObjectsWithTag("life1")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,255);
+			GameObject.FindGameObjectsWithTag("life2")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,255);
+			GameObject.FindGameObjectsWithTag("life3")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,255);
+			GameObject.FindGameObjectsWithTag("life4")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,0);
+			GameObject.FindGameObjectsWithTag("life5")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,0);
+		}
+		if (life>=4){
+			GameObject.FindGameObjectsWithTag("life1")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,255);
+			GameObject.FindGameObjectsWithTag("life2")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,255);
+			GameObject.FindGameObjectsWithTag("life3")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,255);
+			GameObject.FindGameObjectsWithTag("life4")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,255);
+			GameObject.FindGameObjectsWithTag("life5")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,0);
+		}
+		if (life>=5){
+			GameObject.FindGameObjectsWithTag("life1")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,255);
+			GameObject.FindGameObjectsWithTag("life2")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,255);
+			GameObject.FindGameObjectsWithTag("life3")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,255);
+			GameObject.FindGameObjectsWithTag("life4")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,255);
+			GameObject.FindGameObjectsWithTag("life5")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,255);
+		}
+
 
 		
 

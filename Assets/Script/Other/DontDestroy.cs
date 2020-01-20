@@ -1,14 +1,14 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DontDestroy : MonoBehaviour
+public class AudioGame : MonoBehaviour
 {
 
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad (transform.gameObject);
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame

@@ -19,7 +19,6 @@ public class generatorDragon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		if(GameObject.FindGameObjectsWithTag("Dragon").Length < nbSpawn && Random.Range(0,random) == random/2 ) {
 			Instantiate(Resources.Load("Ennemy_Dragon"), new Vector3(coinHautDroit.x+Random.Range(0,10), coinHautDroit.y/4 , 0), Quaternion.identity);
 		}

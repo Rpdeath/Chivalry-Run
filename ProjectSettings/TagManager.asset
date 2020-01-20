@@ -6,6 +6,16 @@ TagManager:
   tags:
   - Ennemy
   - Dragon
+  - CoinManager
+  - CoinText
+  - life1
+  - life2
+  - life3
+  - life4
+  - life5
+  - JumpButton
+  - LeftButton
+  - RightButton
   layers:
   - Default
   - TransparentFX
