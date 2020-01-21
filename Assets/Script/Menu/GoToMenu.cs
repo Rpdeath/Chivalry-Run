@@ -21,4 +21,7 @@ public class GoToMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+    public void onClick(){	
+		SceneManager.LoadScene("Menu");
+	}
 }

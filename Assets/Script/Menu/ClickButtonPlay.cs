@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using	UnityEngine.SceneManagement;	
 
-public class CliclButtonPlay : MonoBehaviour
+public class ClickButtonPlay : MonoBehaviour
 {
    	public void onClick(){	
 		SceneManager.LoadScene("Game");
