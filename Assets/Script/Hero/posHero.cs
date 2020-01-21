@@ -65,7 +65,7 @@ public class posHero : MonoBehaviour
 											0,
 											transform.position.y,
 											transform.position.z);
-		}
+	}
 
 		if (life==0){
 			GameObject.FindGameObjectsWithTag("life1")[0].GetComponent<SpriteRenderer>().color=new Color(255,255,255,0);

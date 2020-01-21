@@ -16,6 +16,7 @@ TagManager:
   - JumpButton
   - LeftButton
   - RightButton
+  - Data
   layers:
   - Default
   - TransparentFX

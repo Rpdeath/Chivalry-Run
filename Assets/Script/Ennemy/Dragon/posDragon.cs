@@ -45,6 +45,7 @@ public class posDragon : MonoBehaviour {
 		if (transform.position.x < coinBasGauche.x - (size.x /2)){
 			Destroy(gameObject);
 			GameObject.FindGameObjectsWithTag("CoinText")[0].GetComponent<Coin>().currentscore+=1;
+			GameObject.FindGameObjectsWithTag("Data")[0].GetComponent<Data_Coin>().currentscore+=1;
 		}
 	}
 }
