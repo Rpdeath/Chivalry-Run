@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dbaaadf6cd84005ad6c0314612b98a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nbSpawn: 0
+  nbSpawn: 2
   random: 100
 --- !u!1 &857718106
 GameObject:
@@ -2317,6 +2317,9 @@ MonoBehaviour:
   massOnJumping: 10
   gravityOnFalling: 50
   gravityOnJumping: 10
+  nbShoot: 2
+  maxShoot: 2
+  ShootCountDown: 1
 --- !u!95 &2066732355
 Animator:
   serializedVersion: 3

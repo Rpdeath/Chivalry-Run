@@ -13,15 +13,17 @@ public class moveHero : MonoBehaviour
 	private float jumpCountDownTimer;
 	private  bool isJumping = false;
 	private  bool isFalling = false;
-    private bool isAttacking = false;
     public float maxJump = 3f;
 	private float maxJumpTimer;
     public int massOnFalling=25;
     public int massOnJumping = 10;
 	public int gravityOnFalling=10;
     public int gravityOnJumping = 10;
-    private Animator animator;
-
+	public int nbShoot = 2;
+	public int maxShoot = 2;
+	private bool isShooting = false;
+	public float ShootCountDown = 1f;
+	private float ShootCountDownTimer;
 	
 
     // Start is called before the first frame update
@@ -31,18 +33,32 @@ public class moveHero : MonoBehaviour
 	   jumpCountDownTimer = jumpCountDown;
 	   maxJumpTimer = maxJump;
 	   speed = speedModifier;
-       animator = GetComponent<Animator>();
     }
+
+	void Shoot(){
+		float sizex = gameObject.GetComponent<BoxCollider2D>().bounds.size.x;
+		float sizey = gameObject.GetComponent<BoxCollider2D>().bounds.size.x;
+		Instantiate(Resources.Load("FireBall"), new Vector3(transform.position.x+(sizex/2), transform.position.y , 0), Quaternion.identity);
+		ShootCountDownTimer = ShootCountDown;
+		isShooting = true;
+	}
 
     // Update is called once per frame
     void Update()
     {
-			
+			if (nbShoot > maxShoot){
+				nbShoot = maxShoot;
+			}
+
 			if ( isFalling ) {
 				jumpCountDownTimer -= Time.deltaTime;
 				 GetComponent<Rigidbody2D>().mass=massOnFalling;
 				 GetComponent<Rigidbody2D>().gravityScale = gravityOnFalling;
 			
+			}
+
+			if (isShooting){
+				ShootCountDownTimer -= Time.deltaTime;
 			}
 			
 			if ( isJumping ) {
@@ -51,6 +67,9 @@ public class moveHero : MonoBehaviour
 				 GetComponent<Rigidbody2D>().gravityScale = gravityOnJumping;
 			
 			}
+
+
+			
 
             if (GetComponent<Rigidbody2D>().velocity.y == 0 )
             {
@@ -73,6 +92,11 @@ public class moveHero : MonoBehaviour
 					isFalling = false;
 					
 			}
+
+			if ( ShootCountDownTimer < 0 ){
+					ShootCountDownTimer = ShootCountDown;
+					isShooting = false;
+			}
 			
 			if ( GetComponent<Rigidbody2D> ().velocity.y < 0 || maxJumpTimer < 0 ){
 					maxJumpTimer = maxJump;
@@ -80,8 +104,6 @@ public class moveHero : MonoBehaviour
 					isJumping = false;
 					
 				}
-        // animator.setJumping(isFalling || isJumping);
-        // animator.setAttacking(isAttacking);
 			
 			float inputY = Input.GetAxis("Vertical");
 			float inputX = Input.GetAxis("Horizontal");
@@ -93,6 +115,12 @@ public class moveHero : MonoBehaviour
 					
 			}
 			
+			if (inputY < 0 && isShooting == false){
+				if (nbShoot > 0){
+				nbShoot -=1;
+				Shoot();
+				}
+			}
 			movement = new Vector2(inputX*speed.x,jump);
 			GetComponent<Rigidbody2D> ().velocity = movement;
     }

@@ -32,30 +32,35 @@ public class posProjectil : MonoBehaviour
 		
 		// Blocage en haut
 		if (transform.position.y > coinHautDroit.y + (size.y /2)){
+			GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<moveHero>().nbShoot+=1;
 			Destroy(gameObject);
 		}
 		// Blocage en bas
 		if (transform.position.y < coinBasDroit.y - (size.y /2)){
+			GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<moveHero>().nbShoot+=1;
 			Destroy(gameObject);
 		}
 
 		// Blocage a droite
 		if (transform.position.x > coinBasDroit.x + (size.x /2)){
+			GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<moveHero>().nbShoot+=1;
 			Destroy(gameObject);
 		}
 
 		// Blocage a gauche
 		if (transform.position.x < coinBasGauche.x - (size.x /2)){
+			GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<moveHero>().nbShoot+=1;
 			Destroy(gameObject);
+
 		}
 
 	}
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log(col);
         if (col.gameObject.tag == "Dragon"){
             GameObject.FindGameObjectsWithTag("CoinText")[0].GetComponent<Coin>().currentscore+=1;
+			GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<moveHero>().nbShoot+=1;
 			GameObject.FindGameObjectsWithTag("Data")[0].GetComponent<Data_Coin>().currentscore+=1;
             Destroy(gameObject);
             Destroy(col.gameObject);
