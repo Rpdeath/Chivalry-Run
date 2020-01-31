@@ -17,6 +17,8 @@ TagManager:
   - LeftButton
   - RightButton
   - Data
+  - CoinLife
+  - FireBall
   layers:
   - Default
   - TransparentFX

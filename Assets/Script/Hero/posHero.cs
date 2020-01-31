@@ -30,6 +30,9 @@ public class posHero : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
+		if (life>5){
+			life = 5;
+		}
 		movement = GetComponent<Rigidbody2D>().velocity;
 
 		size.x = gameObject.GetComponent<BoxCollider2D>().bounds.size.x;

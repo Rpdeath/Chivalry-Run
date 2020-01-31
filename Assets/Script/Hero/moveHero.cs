@@ -22,6 +22,7 @@ public class moveHero : MonoBehaviour
     public int gravityOnJumping = 10;
     private Animator animator;
 
+	
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +64,9 @@ public class moveHero : MonoBehaviour
 				speed.x = speedModifier.x;
 			}
 			
+
+
+
 			if ( jumpCountDownTimer < 0 ){
 					jumpCountDownTimer = jumpCountDown;
 					
