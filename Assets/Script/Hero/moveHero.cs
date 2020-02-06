@@ -19,7 +19,7 @@ public class moveHero : MonoBehaviour
     public int massOnJumping = 10;
 	public int gravityOnFalling=10;
     public int gravityOnJumping = 10;
-	public int nbShoot = 2;
+	public int nbShoot = 0;
 	public int maxShoot = 2;
 	private bool isShooting = false;
 	public float ShootCountDown = 1f;
@@ -106,6 +106,16 @@ public class moveHero : MonoBehaviour
 				}
 			
 			float inputY = Input.GetAxis("Vertical");
+
+			if (Input.touchCount > 0) { 
+				Touch p = Input.GetTouch(0);
+				Debug.Log(p); 
+				Debug.Log(p.position);
+			} 
+ 
+	
+			
+
 			float inputX = Input.GetAxis("Horizontal");
 			float jump = 0f;
 			

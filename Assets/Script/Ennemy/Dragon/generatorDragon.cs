@@ -7,6 +7,7 @@ public class generatorDragon : MonoBehaviour {
 	private Vector3 coinHautDroit;
 	private Vector3 coinBasDroit;
 	public int nbSpawn;
+	public int maxSpawn;
 	private Vector2 size;
 	public int random=500;
 	private int givedLife = 0;
@@ -24,7 +25,7 @@ public class generatorDragon : MonoBehaviour {
 			Instantiate(Resources.Load("Ennemy_Dragon"), new Vector3(coinHautDroit.x+Random.Range(0,10), coinHautDroit.y/4 , 0), Quaternion.identity);
 		}	
 		if (GameObject.FindGameObjectsWithTag("Data")[0].GetComponent<Data_Coin>().currentscore>0){
-		if (GameObject.FindGameObjectsWithTag("Data")[0].GetComponent<Data_Coin>().currentscore%20==0 && nbSpawn<4){
+		if (GameObject.FindGameObjectsWithTag("Data")[0].GetComponent<Data_Coin>().currentscore%20==0 && nbSpawn<maxSpawn){
 			nbSpawn+=1;
 			givedLife20+=1;
 			Instantiate(Resources.Load("Tookable_Coin"), new Vector3(coinHautDroit.x+Random.Range(0,10), coinHautDroit.y/Random.Range(6,10) , 0), Quaternion.identity);

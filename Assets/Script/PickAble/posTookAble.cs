@@ -22,6 +22,7 @@ public class posTookAble : MonoBehaviour
             GameObject.FindGameObjectsWithTag("CoinText")[0].GetComponent<Coin>().currentscore+=5;
 			GameObject.FindGameObjectsWithTag("Data")[0].GetComponent<Data_Coin>().currentscore+=5;
             GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<posHero>().life+=1;
+            GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<moveHero>().nbShoot+=1;
             Destroy(gameObject);
         }else{
         }

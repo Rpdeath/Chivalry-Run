@@ -277,7 +277,7 @@ RectTransform:
   - {fileID: 744071716}
   - {fileID: 229012773}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -475,7 +475,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &208760934
 GameObject:
@@ -505,7 +505,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &229012772
 GameObject:
@@ -1160,6 +1160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nbSpawn: 2
+  maxSpawn: 4
   random: 100
 --- !u!1 &857718106
 GameObject:
@@ -2311,15 +2312,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedModifier: {x: 5, y: 0}
   jumpVelocity: 16
-  jumpCountDown: 0.5
+  jumpCountDown: 0.4
   maxJump: 0.3
   massOnFalling: 30
   massOnJumping: 10
   gravityOnFalling: 50
   gravityOnJumping: 10
-  nbShoot: 2
-  maxShoot: 2
-  ShootCountDown: 1
+  nbShoot: 0
+  maxShoot: 1
+  ShootCountDown: 2
 --- !u!95 &2066732355
 Animator:
   serializedVersion: 3

@@ -19,6 +19,8 @@ TagManager:
   - Data
   - CoinLife
   - FireBall
+  - FireButton
+  - preferences
   layers:
   - Default
   - TransparentFX

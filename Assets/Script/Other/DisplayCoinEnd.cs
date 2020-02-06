@@ -10,7 +10,9 @@ public class DisplayCoinEnd : MonoBehaviour
     {
         txt = gameObject.GetComponent<Text>(); 
         txt.text=GameObject.FindGameObjectsWithTag("Data")[0].GetComponent<Data_Coin>().currentscore.ToString();
+        PlayerPrefs.SetInt("GlobalCoin",PlayerPrefs.GetInt("GlobalCoin")+GameObject.FindGameObjectsWithTag("Data")[0].GetComponent<Data_Coin>().currentscore);
         Destroy(GameObject.FindGameObjectsWithTag("Data")[0]);
+        
     }
 
     // Update is called once per frame
